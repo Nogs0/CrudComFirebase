@@ -1,0 +1,22 @@
+.meu-modal {
+    display: none;
+}
+
+.meu-menu {
+    display: none;
+    position: absolute;
+    background-color: aliceblue;
+    padding: 10px;
+    width: 120px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.meu-menu button {
+    border: none;
+    background: none;
+}
+
+.meu-menu button:hover {
+    font-weight: bold;
+}
