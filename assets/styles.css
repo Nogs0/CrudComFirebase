@@ -20,3 +20,7 @@
 .meu-menu button:hover {
     font-weight: bold;
 }
+
+.show {
+    display: block;
+}
