@@ -11,12 +11,11 @@
 </head>
 
 <body>
-    <div id="modal-create-or-edit" class="meu-modal"> <!-- Modal (display none) -->
-        <div class="card py-5 px-4" style="width: 50%;">
-            <div class="row">
+    <div style="display: flex; height: 100%;">
+        <div id="modal-create-or-edit" class="meu-modal"> <!-- Modal (display none) -->
+            <div class="card py-4 px-4" style="width: 50%;">
                 <h1 id="tituloModal">Criando carro</h1>
-            </div>
-            <form action="">
+                <input hidden type="text" id="item_id">
                 <div class="row">
                     <div class="mb-3">
                         <label for="marca" class="form-label">Marca</label>
@@ -63,37 +62,48 @@
                 <div class="row justify-content-end">
                     <div class="col-xl-3 d-flex justify-content-end">
                         <button onclick="cancelar()" type="button" class="btn btn-secondary">Cancelar</button>
-                        <button onclick="salvar()" type="submit" class="btn btn-primary" style="margin-left: 5px;">Salvar</button>
+                        <button onclick="salvar()" type="submit" class="btn btn-primary"
+                            style="margin-left: 5px;">Salvar</button>
                     </div>
                 </div>
-            </form>
-        </div>
-    </div>
-    <div class="container py-4 px-3 mx-auto">
-        <div class="row">
-            <div class="col-xl-12">
-                <h1>MistCar</h1>
             </div>
         </div>
-        <div class="row">
-            <h2>Carros</h2>
-            <table id="tabelaCarros" class="table table-dark table-striped table-hover">
-                <thead>
-                    <tr class="align-items-center">
-                        <th>#</th>
-                        <th>Marca</th>
-                        <th>Modelo</th>
-                        <th>Cor</th>
-                        <th>Placa</th>
-                        <th>Ano</th>
-                        <th>Km</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="menu-lateral col-md-2 py-4">
+            <h1 class="text-warning" style="text-align: center;">MistCars</h1>
+            <div class="row px-3">
+                <img style="border-radius: 50%;" src="../assets/img/mist.webp" alt="">
+            </div>
+        </div>
+        <div class="col-md-10 container py-4 px-3 mx-auto">
+            <div class="row">
+                <div class="col-xl-12">
+                    <h1>Carros</h1>
+                </div>
+            </div>
+            <div class="card py-4 px-4">
+                <table id="tabelaCarros" class="table table-dark table-striped table-hover">
+                    <thead>
+                        <tr class="align-items-center">
+                            <th>#</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Cor</th>
+                            <th>Placa</th>
+                            <th>Ano</th>
+                            <th>Km</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+                <div class="row justify-content-end">
+                    <div class="col-xl-1" style="margin-right: 10px;">
+                        <button type="button" class="btn btn-warning" onclick="criarCarro()">Adicionar</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="scripts.js"></script>

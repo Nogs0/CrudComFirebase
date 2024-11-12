@@ -1,3 +1,16 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.menu-lateral {
+    background-color: #2c3034;
+    height: 100%;
+}
+
 .meu-modal {
     display: none;
     width: 100%;
@@ -24,8 +37,8 @@
     font-weight: bold;
 }
 
-.show {
-    display: block;
+.show-menu {
+    display: block !important;
 }
 
 .show-modal {
