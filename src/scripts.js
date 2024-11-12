@@ -1,4 +1,5 @@
 const modalCreateOrEdit = document.getElementById(`modal-create-or-edit`);
+
 async function buscarCarros() {
     try {
         // Faz a requisição para a API
@@ -58,17 +59,17 @@ async function buscarCarros() {
 
             let botaoView = document.getElementById(`itemButtonView_${i}`);
             botaoView.addEventListener('click', () => {
-                visualizarItem(i);
+                visualizarItem(item.fields);
             });
 
             let botaoEdit = document.getElementById(`itemButtonEdit_${i}`);
             botaoEdit.addEventListener('click', () => {
-                editarItem(i);
+                editarItem(item.fields);
             });
 
             let botaoDelete = document.getElementById(`itemButtonDelete_${i}`);
             botaoDelete.addEventListener('click', () => {
-                excluirItem();
+                excluirItem(i);
             });
         }
 
@@ -79,22 +80,54 @@ async function buscarCarros() {
 
 buscarCarros();
 
-function visualizarItem(index) {
+function visualizarItem(item) {
     let tituloModal = document.getElementById('tituloModal');
     tituloModal.textContent = "Visualizando carro";
     modalCreateOrEdit.classList.add('show-modal');
+    fillForm(item, true)
 }
 
-function editarItem(index) {
+function editarItem(item) {
     let tituloModal = document.getElementById('tituloModal');
     tituloModal.textContent = "Editando carro";
     modalCreateOrEdit.classList.add('show-modal');
+    fillForm(item)
 }
 
 function excluirItem(index) {
     alert('Excluir')
 }
 
+function fillForm(item, isView) {
+    let inputMarca = document.getElementById('marca');
+    inputMarca.value = item.MARCA.stringValue;
+    inputMarca.disabled = isView;
+
+    let inputModelo = document.getElementById('modelo');
+    inputModelo.value = item.MODELO.stringValue;
+    inputModelo.disabled = isView;
+
+    let inputCor = document.getElementById('cor');
+    inputCor.value = item.COR.stringValue;
+    inputCor.disabled = isView;
+
+    let inputPlaca = document.getElementById('placa');
+    inputPlaca.value = item.PLACA.stringValue;
+    inputPlaca.disabled = isView;
+
+    let inputAno = document.getElementById('ano');
+    inputAno.value = item.ANO.stringValue;
+    inputAno.disabled = isView;
+
+    let inputOdometro = document.getElementById('odometro');
+    inputOdometro.value = item.ODOMETRO.stringValue;
+    inputOdometro.disabled = isView;
+}
+
 function cancelar() {
     modalCreateOrEdit.classList.remove('show-modal')
+}
+
+function salvar() {
+
 }

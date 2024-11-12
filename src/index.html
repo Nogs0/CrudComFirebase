@@ -20,11 +20,8 @@
                 <div class="row">
                     <div class="mb-3">
                         <label for="marca" class="form-label">Marca</label>
-                        <select id="marca" name="marca" class="form-select">
-                            <option>Volkswagen</option>
-                            <option>GM</option>
-                            <option>Honda</option>
-                        </select>
+                        <input type="text" id="marca" name="marca" class="form-control" placeholder="Insira a marca"
+                            aria-label="Marca" aria-describedby="basic-addon1">
                     </div>
                 </div>
                 <div class="row">
@@ -64,11 +61,9 @@
                     </div>
                 </div>
                 <div class="row justify-content-end">
-                    <div class="col-xl-2">
+                    <div class="col-xl-3 d-flex justify-content-end">
                         <button onclick="cancelar()" type="button" class="btn btn-secondary">Cancelar</button>
-                    </div>
-                    <div class="col-xl-2">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                        <button onclick="salvar()" type="submit" class="btn btn-primary" style="margin-left: 5px;">Salvar</button>
                     </div>
                 </div>
             </form>
