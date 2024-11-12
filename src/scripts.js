@@ -1,3 +1,4 @@
+const modalCreateOrEdit = document.getElementById(`modal-create-or-edit`);
 async function buscarCarros() {
     try {
         // Faz a requisição para a API
@@ -44,6 +45,7 @@ async function buscarCarros() {
                 `;
 
             tabelaCorpo.appendChild(linha);
+
             let menu = document.getElementById(`menu_${i}`)
 
             let botaoMenu = document.getElementById(`itemButtonMenu_${i}`);
@@ -56,21 +58,18 @@ async function buscarCarros() {
 
             let botaoView = document.getElementById(`itemButtonView_${i}`);
             botaoView.addEventListener('click', () => {
-                alert('view')
+                visualizarItem(i);
             });
 
             let botaoEdit = document.getElementById(`itemButtonEdit_${i}`);
             botaoEdit.addEventListener('click', () => {
-                alert('edit')
+                editarItem(i);
             });
 
             let botaoDelete = document.getElementById(`itemButtonDelete_${i}`);
             botaoDelete.addEventListener('click', () => {
-                alert('delete')
+                excluirItem();
             });
-
-            // Adiciona a linha à tabela
-            // });
         }
 
     } catch (erro) {
@@ -79,3 +78,23 @@ async function buscarCarros() {
 }
 
 buscarCarros();
+
+function visualizarItem(index) {
+    let tituloModal = document.getElementById('tituloModal');
+    tituloModal.textContent = "Visualizando carro";
+    modalCreateOrEdit.classList.add('show-modal');
+}
+
+function editarItem(index) {
+    let tituloModal = document.getElementById('tituloModal');
+    tituloModal.textContent = "Editando carro";
+    modalCreateOrEdit.classList.add('show-modal');
+}
+
+function excluirItem(index) {
+    alert('Excluir')
+}
+
+function cancelar() {
+    modalCreateOrEdit.classList.remove('show-modal')
+}

@@ -11,6 +11,69 @@
 </head>
 
 <body>
+    <div id="modal-create-or-edit" class="meu-modal"> <!-- Modal (display none) -->
+        <div class="card py-5 px-4" style="width: 50%;">
+            <div class="row">
+                <h1 id="tituloModal">Criando carro</h1>
+            </div>
+            <form action="">
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="marca" class="form-label">Marca</label>
+                        <select id="marca" name="marca" class="form-select">
+                            <option>Volkswagen</option>
+                            <option>GM</option>
+                            <option>Honda</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="modelo" class="form-label">Modelo</label>
+                        <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Insira o modelo"
+                            aria-label="Modelo" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="cor" class="form-label">Cor</label>
+                        <input type="text" id="cor" name="cor" class="form-control" placeholder="Insira a cor"
+                            aria-label="Cor" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="placa" class="form-label">Placa</label>
+                        <input type="text" id="placa" name="placa" class="form-control" placeholder="Insira a placa"
+                            aria-label="Placa" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="ano" class="form-label">Ano</label>
+                        <input type="number" id="ano" name="ano" class="form-control"
+                            placeholder="Insira o ano de fabricação" aria-label="Ano" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="odometro" class="form-label">KM Rodada</label>
+                        <input type="number" id="odometro" name="odometro" class="form-control"
+                            placeholder="Insira a KM percorrida pelo veículo" aria-label="odometro"
+                            aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="col-xl-2">
+                        <button onclick="cancelar()" type="button" class="btn btn-secondary">Cancelar</button>
+                    </div>
+                    <div class="col-xl-2">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="container py-4 px-3 mx-auto">
         <div class="row">
             <div class="col-xl-12">
@@ -36,69 +99,6 @@
 
                 </tbody>
             </table>
-        </div>
-    </div>
-    <div class="container meu-modal"> <!-- Modal (display none) -->
-        <div class="row">
-            <h1>Criando carro</h1>
-        </div>
-        <div class="card py-5 px-4">
-            <form action="">
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="marca" class="form-label">Marca</label>
-                        <select id="marca" name="marca" class="form-select">
-                            <option>Volkswagen</option>
-                            <option>GM</option>
-                            <option>Honda</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="modelo" class="form-label">Modelo</label>
-                        <input type="text" id="modelo" name="modelo" class="form-control" placeholder="Insira o modelo"
-                            aria-label="Modelo" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="cor" class="form-label">Cor</label>
-                        <input type="text" id="cor" name="cor" class="form-control" placeholder="Insira a cor" aria-label="Cor"
-                            aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="placa" class="form-label">Placa</label>
-                        <input type="text" id="placa" name="placa" class="form-control" placeholder="Insira a placa"
-                            aria-label="Placa" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="ano" class="form-label">Ano</label>
-                        <input type="number" id="ano" name="ano" class="form-control" placeholder="Insira o ano de fabricação"
-                            aria-label="Ano" aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3">
-                        <label for="odometro" class="form-label">KM Rodada</label>
-                        <input type="number" id="odometro" name="odometro" class="form-control"
-                            placeholder="Insira a KM percorrida pelo veículo" aria-label="odometro"
-                            aria-describedby="basic-addon1">
-                    </div>
-                </div>
-                <div class="row justify-content-end">
-                    <div class="col-xl-2">
-                        <button type="button" class="btn btn-secondary">Cancelar</button>
-                    </div>
-                    <div class="col-xl-2">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
     <script src="scripts.js"></script>
